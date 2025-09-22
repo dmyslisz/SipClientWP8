@@ -1,0 +1,67 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PhoneApp8.CallPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    SupportedOrientations="Portrait" Orientation="Portrait">
+
+    <Grid x:Name="LayoutRoot" Background="#FF000000">
+        <!-- Numer i timer -->
+        <StackPanel VerticalAlignment="Top" Margin="0,40,0,0" HorizontalAlignment="Center">
+            <TextBlock x:Name="CallerText" 
+                 Foreground="White" FontSize="36" 
+                 Text="123456789" />
+            <TextBlock x:Name="TimerText" 
+                 Foreground="White" FontSize="24" Margin="0,10,0,0" 
+                 Text="00:00" />
+        </StackPanel>
+
+        <!-- Środkowe przyciski -->
+        <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Click="Speaker_Click" Margin="10">
+                <StackPanel>
+                    <Image Source="/Assets/speaker.png" Width="48" Height="48"/>
+                    <TextBlock Text="Speaker" Foreground="White" FontSize="14" 
+                     HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Click="Mute_Click" Margin="10">
+                <StackPanel>
+                    <Image Source="/Assets/mute.png" Width="48" Height="48"/>
+                    <TextBlock Text="Mute" Foreground="White" FontSize="14" 
+                     HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Click="Bluetooth_Click" Margin="10">
+                <StackPanel>
+                    <Image Source="/Assets/bluetooth.png" Width="48" Height="48"/>
+                    <TextBlock Text="Bluetooth" Foreground="White" FontSize="14" 
+                     HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!-- Dolne przyciski -->
+        <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                Margin="0,0,0,100">
+            <Button Click="Hold_Click" Margin="10">
+                <StackPanel>
+                    <Image Source="/Assets/hold.png" Width="48" Height="48"/>
+                    <TextBlock Text="Hold" Foreground="White" FontSize="14" 
+                     HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!-- Czerwona belka End Call -->
+        <Button x:Name="EndCallButton"
+            Content="End Call"
+            Background="Red" Foreground="White"
+            FontSize="24"
+            Height="80"
+            VerticalAlignment="Bottom"
+            Click="EndCall_Click"/>
+    </Grid>
+</phone:PhoneApplicationPage>
